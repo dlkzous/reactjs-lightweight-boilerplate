@@ -1,0 +1,82 @@
+{
+  "name": "reactjs-lightweight-boilerplate",
+  "description": "Lightweight ReactJS boilerplate application that uses the flux architecture. Set up with eslint and jsdoc. ",
+  "version": "0.0.0-semantically-released",
+  "main": "src/js/App.js",
+  "scripts": {
+    "start": "webpack-dev-server -d",
+    "commit": "git-cz",
+    "prebuild": "rimraf build",
+    "build": "npm-run-all --parallel build:*",
+    "build:main": "webpack",
+    "build:min": "webpack --output-filename build.min.js -p",
+    "prelint": "rimraf lint",
+    "lint": "eslint . --ext .js --ext .jsx --cache -f node_modules/eslint-html-reporter/reporter.js -o lint/report.html",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predoc": "rimraf docs",
+    "doc": "./node_modules/.bin/jsdoc -c conf.json -t ./node_modules/ink-docstrap/template -R README.md -r -d docs",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "keywords": [
+    "reactjs",
+    "flux",
+    "eslint",
+    "jsdoc",
+    "es6",
+    "webpack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kushaldsouza/reactjs-lightweight-boilerplate.git"
+  },
+  "author": "Kushal L. DSouza <kushlyn@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kushaldsouza/reactjs-lightweight-boilerplate/issues"
+  },
+  "homepage": "https://github.com/kushaldsouza/reactjs-lightweight-boilerplate#readme",
+  "devDependencies": {
+    "babel": "6.5.2",
+    "babel-core": "6.8.0",
+    "babel-eslint": "6.0.4",
+    "babel-loader": "6.2.4",
+    "babel-preset-es2015": "6.6.0",
+    "babel-preset-react": "6.5.0",
+    "commitizen": "2.8.1",
+    "copy-webpack-plugin": "3.0.0",
+    "cz-conventional-changelog": "1.1.6",
+    "eslint": "2.10.1",
+    "eslint-config-airbnb": "9.0.1",
+    "eslint-html-reporter": "0.5.2",
+    "eslint-loader": "1.3.0",
+    "eslint-plugin-import": "1.8.0",
+    "eslint-plugin-jsx-a11y": "1.2.0",
+    "eslint-plugin-react": "5.1.1",
+    "ghooks": "1.2.1",
+    "ink-docstrap": "1.1.4",
+    "jsdoc": "3.4.0",
+    "npm-run-all": "2.1.0",
+    "rimraf": "2.5.2",
+    "semantic-release": "^4.3.5",
+    "webpack": "1.13.0",
+    "webpack-dev-server": "1.14.1"
+  },
+  "dependencies": {
+    "axios": "0.11.0",
+    "events": "1.1.0",
+    "flux": "2.1.1",
+    "keymirror": "0.1.1",
+    "path": "0.12.7",
+    "react": "15.0.2",
+    "react-dom": "15.0.2",
+    "react-router": "2.4.0"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run build"
+    },
+    "commitezen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
+}
