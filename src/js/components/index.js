@@ -1,43 +1,59 @@
 import React from 'react';
 import connectToStore from '../utils/ConnectToStore';
-import ActionCreator from '../actions/ActionCreator';
+import DataService from '../services/DataService';
+import Store from '../stores/Store';
+
+function getState() {
+  const data = Store.getAll();
+  return { data };
+}
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value: ''
-    };
-    this.onItemChange = this.onItemChange.bind(this);
-    this.onItemsChanged = this.onItemsChanged.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
-  onItemChange(e) {
-    this.setState({
-      value: e.target.value
-    });
-  }
-  onItemsChanged() {
-    const { value } = this.state;
-    ActionCreator.addItem(value);
-    this.setState({
-      value: ''
-    });
+  onClick() {
+    DataService.getData();
   }
   render() {
-    const { items } = this.props;
-    const { value } = this.state;
+    const { items, loadingCompleted } = this.props.data;
     return (
       <div>
-        {items[items.length - 1]}
-        <input type="text" value={value} onChange={this.onItemChange} />
-        <input type="button" onClick={this.onItemsChanged} value="submit" />
+        {loadingCompleted ?
+          (
+          <div className="row">
+            <ul>
+              {items.map((item, index) => <li key={index}>{item}</li>)}
+            </ul>
+          </div>
+          )
+        : (
+          <div className="row">
+            <div className="preloader-wrapper active">
+              <div className="spinner-layer spinner-red-only">
+                <div className="circle-clipper left">
+                  <div className="circle"></div>
+                </div><div className="gap-patch">
+                  <div className="circle"></div>
+                </div><div className="circle-clipper right">
+                  <div className="circle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          )}
+        {loadingCompleted}
+        <a onClick={this.onClick} className="btn-floating btn-large waves-effect waves-light red">
+          <i className="material-icons">add</i>
+        </a>
       </div>
     );
   }
 }
 
 Main.propTypes = {
-  items: React.PropTypes.array.isRequired
+  data: React.PropTypes.object.isRequired
 };
 
-export default connectToStore(Main);
+export default connectToStore(Main, getState);

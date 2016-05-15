@@ -16,6 +16,19 @@ const ActionCreator = {
     dispatch({
       actionType: Constants.ADD_ITEM, item
     });
+  },
+
+  /**
+   * Function that sets the loading status in the store
+   * @function setLoadingStatus
+   * @author Kushal D'Souza
+   * @param {bool} status - status that indicates whether a request is currently processing
+   * @memberOf ActionCreator
+   */
+  setLoadingStatus(status) {
+    dispatch({
+      actionType: Constants.SET_LOADING_STATUS, status
+    });
   }
 };
 

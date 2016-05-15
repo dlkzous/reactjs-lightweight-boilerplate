@@ -23,7 +23,11 @@
     "eslint",
     "jsdoc",
     "es6",
-    "webpack"
+    "webpack",
+    "http",
+    "lightweight",
+    "boilerplate",
+    "materialisecss"
   ],
   "repository": {
     "type": "git",

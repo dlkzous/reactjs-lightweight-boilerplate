@@ -3,11 +3,16 @@ import Constants from '../constants/Constants';
 import { EventEmitter } from 'events';
 
 const CHANGE_EVENT = 'change';
-const items = ['test'];
-const data = { items };
+const items = [];
+const data = { items, loadingCompleted: true };
 
 const addItem = (item) => {
   items.push(item);
+  data.loadingCompleted = true;
+};
+
+const setLoadingStatus = (status) => {
+  data.loadingCompleted = status;
 };
 
 const AppStore = Object.assign(EventEmitter.prototype, {
@@ -31,6 +36,9 @@ const AppStore = Object.assign(EventEmitter.prototype, {
     switch (action.actionType) {
       case Constants.ADD_ITEM:
         addItem(action.item);
+        break;
+      case Constants.SET_LOADING_STATUS:
+        setLoadingStatus(action.status);
         break;
       default:
         break;
