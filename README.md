@@ -1,6 +1,7 @@
 [![travis build](https://img.shields.io/travis/kushaldsouza/reactjs-lightweight-boilerplate.svg)](https://travis-ci.org/kushaldsouza/reactjs-lightweight-boilerplate)
 [![version](https://img.shields.io/npm/v/reactjs-lightweight-boilerplate.svg)](https://img.shields.io/npm/v/reactjs-lightweight-boilerplate.svg)
 [![downloads](https://img.shields.io/npm/dt/reactjs-lightweight-boilerplate.svg)](https://img.shields.io/npm/dt/reactjs-lightweight-boilerplate.svg)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 This is a simple ReactJS boilerplate application that utilises the flux architecture. It has been set up with jshint and jsdoc and uses Materialise CSS.
 
