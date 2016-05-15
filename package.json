@@ -75,7 +75,7 @@
     "ghooks": {
       "pre-commit": "npm run build"
     },
-    "commitezen": {
+    "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
   }
