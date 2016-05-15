@@ -29,9 +29,7 @@ class DataService {
       .then((response) => {
         Actions.addItem(response.data);
       })
-      .catch((response) => {
-        console.log(response);
-      });
+      .catch((response) => response);
   }
 }
 
