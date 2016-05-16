@@ -11,6 +11,10 @@ In order to clone the boilerplate application, run:
 
 ```git clone git@github.com:kushaldsouza/reactjs-lightweight-boilerplate.git```
 
+If you use bower, you can clone the boilerplate by running the following command:
+
+```bower install reactjs-lightweight-boilerplate```
+
 Run the following commands to get the project up and running:
 
 ```js
