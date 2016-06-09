@@ -1,4 +1,4 @@
-import { register } from '../dispatcher/AppDispatcher';
+import AppDispatcher from '../dispatcher/AppDispatcher';
 import Constants from '../constants/Constants';
 import { EventEmitter } from 'events';
 
@@ -32,7 +32,7 @@ const AppStore = Object.assign(EventEmitter.prototype, {
     return data;
   },
 
-  dispatcherIndex: register((action) => {
+  dispatcherIndex: AppDispatcher.register((action) => {
     switch (action.actionType) {
       case Constants.ADD_ITEM:
         addItem(action.item);

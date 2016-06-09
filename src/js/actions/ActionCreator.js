@@ -1,5 +1,5 @@
 import Constants from '../constants/Constants';
-import { dispatch } from '../dispatcher/AppDispatcher';
+import AppDispatcher from '../dispatcher/AppDispatcher';
 
 /**
  * @namespace ActionCreator
@@ -13,7 +13,7 @@ const ActionCreator = {
    * @memberOf ActionCreator
    */
   addItem(item) {
-    dispatch({
+    AppDispatcher.dispatch({
       actionType: Constants.ADD_ITEM, item
     });
   },
@@ -26,7 +26,7 @@ const ActionCreator = {
    * @memberOf ActionCreator
    */
   setLoadingStatus(status) {
-    dispatch({
+    AppDispatcher.dispatch({
       actionType: Constants.SET_LOADING_STATUS, status
     });
   }
