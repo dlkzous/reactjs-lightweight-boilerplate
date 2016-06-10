@@ -29,7 +29,9 @@ class DataService {
       .then((response) => {
         Actions.addItem(response.data);
       })
-      .catch((response) => response);
+      .catch(() => {
+        Actions.setLoadingStatus(true);
+      });
   }
 }
 
