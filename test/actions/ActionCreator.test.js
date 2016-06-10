@@ -1,4 +1,3 @@
-import expect from 'expect.js';
 import Actions from '../../src/js/actions/ActionCreator';
 import AppDispatcher from '../../src/js/dispatcher/AppDispatcher';
 import sinon from 'sinon';
@@ -18,8 +17,8 @@ describe('ActionCreator', () => {
     Actions.addItem('test');
     sinon.assert.calledOnce(spy);
     sinon.assert.calledWith(spy, {
-      actionType: "ADD_ITEM", 
-      item: "test" 
+      actionType: 'ADD_ITEM',
+      item: 'test'
     });
     done();
   });
@@ -28,8 +27,8 @@ describe('ActionCreator', () => {
     Actions.setLoadingStatus(true);
     sinon.assert.calledOnce(spy);
     sinon.assert.calledWith(spy, {
-      actionType: "SET_LOADING_STATUS", 
-      status: true 
+      actionType: 'SET_LOADING_STATUS',
+      status: true
     });
     done();
   });
