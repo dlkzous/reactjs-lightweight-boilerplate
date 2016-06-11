@@ -2,7 +2,7 @@ import AppDispatcher from '../../src/js/dispatcher/AppDispatcher';
 import Store from '../../src/js/stores/Store';
 import expect from 'expect.js';
 
-describe('DataService', () => {
+describe('Store', () => {
   beforeEach(() => {
     const defaultState = {
       items: [],
