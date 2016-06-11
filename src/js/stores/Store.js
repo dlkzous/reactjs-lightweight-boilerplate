@@ -3,11 +3,13 @@ import Constants from '../constants/Constants';
 import { EventEmitter } from 'events';
 
 const CHANGE_EVENT = 'change';
-const items = [];
-const data = { items, loadingCompleted: true };
+const data = {
+  items: [],
+  loadingCompleted: true
+};
 
 const addItem = (item) => {
-  items.push(item);
+  data.items.push(item);
   data.loadingCompleted = true;
 };
 
