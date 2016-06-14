@@ -1,7 +1,9 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import Constants from '../constants/Constants';
 import { EventEmitter } from 'events';
+import _ from 'lodash';
 
+let id = 0;
 const CHANGE_EVENT = 'change';
 const data = {
   items: [],
@@ -9,8 +11,19 @@ const data = {
 };
 
 const addItem = (item) => {
-  data.items.push(item);
+  data.items.push({
+    city: item,
+    id: ++id,
+    completed: false
+  });
   data.loadingCompleted = true;
+};
+
+const toggleItem = (itemID) => {
+  const index = _.indexOf(data.items, _.find(data.items, { id: itemID }));
+  if (index >= 0) {
+    data.items[index].completed = !data.items[index].completed;
+  }
 };
 
 const setLoadingStatus = (status) => {
@@ -38,6 +51,9 @@ const AppStore = Object.assign(EventEmitter.prototype, {
     switch (action.actionType) {
       case Constants.ADD_ITEM:
         addItem(action.item);
+        break;
+      case Constants.TOGGLE_ITEM:
+        toggleItem(action.id);
         break;
       case Constants.SET_LOADING_STATUS:
         setLoadingStatus(action.status);

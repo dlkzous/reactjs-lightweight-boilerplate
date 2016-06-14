@@ -14,11 +14,21 @@ describe('ActionCreator', () => {
   });
 
   it('dispatches the add item event when an item is added', (done) => {
-    Actions.addItem('test');
+    Actions.addItem('New York');
     sinon.assert.calledOnce(spy);
     sinon.assert.calledWith(spy, {
       actionType: 'ADD_ITEM',
-      item: 'test'
+      item: 'New York'
+    });
+    done();
+  });
+
+  it('dispatches the toggle item event when a toggle item dispatch event is called', (done) => {
+    Actions.toggleItem(0);
+    sinon.assert.calledOnce(spy);
+    sinon.assert.calledWith(spy, {
+      actionType: 'TOGGLE_ITEM',
+      id: 0
     });
     done();
   });

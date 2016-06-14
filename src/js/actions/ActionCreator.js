@@ -19,6 +19,19 @@ const ActionCreator = {
   },
 
   /**
+   * Function that toggles the status of an item
+   * @function toggleItem
+   * @author Kushal D'Souza
+   * @param {string} id - id of item
+   * @memberOf ActionCreator
+   */
+  toggleItem(id) {
+    AppDispatcher.dispatch({
+      actionType: Constants.TOGGLE_ITEM, id
+    });
+  },
+
+  /**
    * Function that sets the loading status in the store
    * @function setLoadingStatus
    * @author Kushal D'Souza
