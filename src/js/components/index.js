@@ -24,7 +24,7 @@ class Main extends React.Component {
           (
           <div className="row">
             <ul>
-              {items.map((item, index) => <li key={index}>{item}</li>)}
+              {items.map((item, index) => <li key={index}>{item.city}</li>)}
             </ul>
           </div>
           )
