@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [*](#)
+    - [Current Version : v0.97.5](#current-version--v0975)
+  - [Sass Requirements:](#sass-requirements)
+  - [Supported Browsers:](#supported-browsers)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Testing](#testing)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ![alt tag](https://raw.github.com/dogfalo/materialize/master/images/materialize.gif)
 ===========
 
